@@ -64,10 +64,10 @@ function printCars() {
                             ${car.price}
                         </td>
                         <td>
-                            <button class="btn btn-danger" onclick="removeCar(${car.id})">
+                            <button class="btn btn-outline-danger" onclick="removeCar(${car.id})">
                                 Eliminar
                             </button>
-                            <button class="btn btn-warning" onclick="editCarButton(${car.id})">
+                            <button class="btn btn-outline-light" onclick="editCarButton(${car.id})">
                                 Editar
                             </button>
                         </td>

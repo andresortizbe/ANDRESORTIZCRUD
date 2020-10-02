@@ -86,8 +86,12 @@ function submitCar() {
   }
 }
 function editCar() {
-  const name = document.getElementById("brand").value;
-  editingCar.brand = name;
+  
+  editingCar.brand = document.getElementById("brand").value;;
+  editingCar.model = document.getElementById("model").value;;
+  editingCar.price = document.getElementById("price").value;;
+  editingCar.year = document.getElementById("year").value;;
+  editingCar.color = document.getElementById("color").value;;
   printCars();
   editingCar = false;
   document.getElementById("brand").value = "";

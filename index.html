@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="bg-secondary">
+
+    <div class="container mt-4 .bg-secondary">
+        
+        <div class="card card text-white bg-dark mb-3">
+            <img src="https://cdn.pixabay.com/photo/2017/01/23/18/23/banner-2003380_960_720.jpg" class="img-fluid" alt="Responsive image"> 
+            <h1 class="text-center font-weight-bolder"> LISTADO DE VEHICULOS</h1>
+        <table class="table  table-hover text-white">
+            <thead>
+                <tr class="font-weight-bolder text-center">
+                    <th>MARCA</th>
+                    <th>MODELO</th>
+                    <th>COLOR</th>
+                    <th>AÑO</th>
+                    <th>PRECIO</th>
+                    <th>Eliminar / Editar</th>
+
+                </tr>
+            </thead>
+            <tbody id="cars-table-body">
+                <!--Aquí van mis filas -->
+            </tbody>
+        </table>
+        </div>
+        <div class="card card text-white bg-dark mb-3">
+            <div class="card-body">
+                <form onsubmit="event.preventDefault(), submitCar()" action="/users">
+                    <div class="form-row">
+                      <div class="col-md-6 mb-3">
+                        <label for="brand">MARCA </label>
+                        <input type="text" class="form-control" id="brand" placeholder="Ingresa La Marca">
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="model">MODELO </label>
+                        <input type="text" class="form-control" id="model" placeholder="Ingresa el Modelo">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col-md-6 mb-3">
+                        <label for="color">COLOR </label>
+                      <input type="text" class="form-control" id="color" placeholder="Ingresa el Color">
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <label for="year">AÑO </label>
+                        <input type="text" class="form-control" id="year" placeholder="Ingresa el Año">
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <label for="price">PRECIO </label>
+                      <input type="text" class="form-control" id="price" placeholder="Ingresa el Precio">
+                      </div>
+                    </div>
+                      <button type="submit" class="btn btn-light">Agregar</button>
+                  </form>
+                
+                
+                
+                
+                
+               
+                    
+            </div>
+        </div>
+        
+    </div>
+    <script src="./cars.js"></script>
+</body>
+</html>

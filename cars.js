@@ -93,14 +93,13 @@ function editCar() {
 }
 function editCarButton(id) {
     const car = cars.find((car) => car.id === id);
-    // const car = cars[position];
     document.getElementById('brand').value = car.brand;
     document.getElementById('model').value = car.model;
     document.getElementById('price').value = car.price;
     document.getElementById('year').value = car.year;
     document.getElementById('color').value = car.color;
     editingCar = car;
-    // console.log(car);
+    
 }
 
 function addCar() {
@@ -114,21 +113,14 @@ function addCar() {
         price: document.getElementById('price').value,
 
     }
-    // Agrego el usuario creado al array que tiene todos los usuarios
+    
     cars.push(newCar);
-    // imprimo nuevamente a todos los usuarios
     printCars();
 
 }
 function removeCar(id) {
-
-    // console.log(id);
     const position = cars.findIndex((car) => car.id === id);
-    // console.log(position)
     cars.splice(position, 1);
     printCars();
 }
-
-
-// Ejecuto esta función para que al cargar la página se impriman todos los usuarios del array que tengo actualmente
 printCars();

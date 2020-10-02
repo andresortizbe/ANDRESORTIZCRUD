@@ -94,7 +94,7 @@ function editCar() {
   editingCar.color = document.getElementById("color").value;;
   printCars();
   editingCar = false;
-  document.getElementById("brand").value = "";
+  clearForm();
 }
 function editCarButton(id) {
   const car = cars.find((car) => car.id === id);
@@ -118,10 +118,18 @@ function addCar() {
 
   cars.push(newCar);
   printCars();
+  clearForm();
 }
 function removeCar(id) {
   const position = cars.findIndex((car) => car.id === id);
   cars.splice(position, 1);
   printCars();
+}
+function clearForm(){
+    document.getElementById('brand').value = '';
+    document.getElementById('model').value ='';
+    document.getElementById('color').value ='';
+    document.getElementById('year').value ='';
+    document.getElementById('price').value ='';
 }
 printCars();

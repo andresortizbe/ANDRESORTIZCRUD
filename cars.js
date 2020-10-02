@@ -1,53 +1,55 @@
 const cars = [
-    {
-        id: 1,
-        brand: 'Porsche',
-        model: '911',
-        color: 'Black',
-        year: '2020',
-        price:"$ 600.000.000"
-    },
-    {
-        id: 2,
-        brand: 'Porsche',
-        model: 'Cayman 718',
-        color: 'Red',
-        year: '2020',
-        price:"$ 400.000.000"
-    },
-    {
-        id: 3,
-        brand: 'Porsche',
-        model: 'Cayenne',
-        color: 'White',
-        year: '2020',
-        price:"$ 25.000.000"
-    },
-    {
-        id: 4,
-        brand: 'Hummer',
-        model: 'H3',
-        color: 'Blue',
-        year: '2003',
-        price:"$ 300.000.000"
-    },
-    {
-        id: 5,
-        brand: 'Aston Martin',
-        model: 'Vantage',
-        color: 'Gray',
-        year: '2020',
-        price:"$ 900.000.000"
-    },
+  {
+    id: 1,
+    brand: "Porsche",
+    model: "911",
+    color: "Black",
+    year: "2020",
+    price: "$ 600.000.000",
+  },
+  {
+    id: 2,
+    brand: "Porsche",
+    model: "Cayman 718",
+    color: "Red",
+    year: "2020",
+    price: "$ 400.000.000",
+  },
+  {
+    id: 3,
+    brand: "Porsche",
+    model: "Cayenne",
+    color: "White",
+    year: "2020",
+    price: "$ 25.000.000",
+  },
+  {
+    id: 4,
+    brand: "Hummer",
+    model: "H3",
+    color: "Blue",
+    year: "2003",
+    price: "$ 300.000.000",
+  },
+  {
+    id: 5,
+    brand: "Aston Martin",
+    model: "Vantage",
+    color: "Gray",
+    year: "2020",
+    price: "$ 900.000.000",
+  },
 ];
 let editingCar = false;
 
 function printCars() {
-
-    const tableBody = document.getElementById('cars-table-body')
-    tableBody.innerHTML = ''
-    cars.forEach((car) => {
-        const td = `<tr class="text-center">
+  const tableBody = document.getElementById("cars-table-body");
+  tableBody.innerHTML = "";
+  cars.forEach((car) => {
+    const td = `<tr class="text-center">
+                        <td>
+                        <i class="fas fa-car"></i>
+                        </td>
                         <td>
                             ${car.brand}
                         </td>
@@ -71,56 +73,51 @@ function printCars() {
                                 Editar
                             </button>
                         </td>
-                    </tr>`
-        tableBody.innerHTML += td;
-    })
+                    </tr>`;
+    tableBody.innerHTML += td;
+  });
 }
-
 
 function submitCar() {
-    if(editingCar) {
-        editCar();
-    } else {
-        addCar();
-    }
+  if (editingCar) {
+    editCar();
+  } else {
+    addCar();
+  }
 }
 function editCar() {
-    const name = document.getElementById('brand').value;
-    editingCar.brand = name;
-    printCars();
-    editingCar = false;
-    document.getElementById('brand').value = ''
+  const name = document.getElementById("brand").value;
+  editingCar.brand = name;
+  printCars();
+  editingCar = false;
+  document.getElementById("brand").value = "";
 }
 function editCarButton(id) {
-    const car = cars.find((car) => car.id === id);
-    document.getElementById('brand').value = car.brand;
-    document.getElementById('model').value = car.model;
-    document.getElementById('price').value = car.price;
-    document.getElementById('year').value = car.year;
-    document.getElementById('color').value = car.color;
-    editingCar = car;
-    
+  const car = cars.find((car) => car.id === id);
+  document.getElementById("brand").value = car.brand;
+  document.getElementById("model").value = car.model;
+  document.getElementById("price").value = car.price;
+  document.getElementById("year").value = car.year;
+  document.getElementById("color").value = car.color;
+  editingCar = car;
 }
 
 function addCar() {
-    
-    const newCar = {
-        id: cars.length + 1,
-        brand:  document.getElementById('brand').value,
-        model: document.getElementById('model').value,
-        color: document.getElementById('color').value,
-        year: document.getElementById('year').value,
-        price: document.getElementById('price').value,
+  const newCar = {
+    id: cars.length + 1,
+    brand: document.getElementById("brand").value,
+    model: document.getElementById("model").value,
+    color: document.getElementById("color").value,
+    year: document.getElementById("year").value,
+    price: document.getElementById("price").value,
+  };
 
-    }
-    
-    cars.push(newCar);
-    printCars();
-
+  cars.push(newCar);
+  printCars();
 }
 function removeCar(id) {
-    const position = cars.findIndex((car) => car.id === id);
-    cars.splice(position, 1);
-    printCars();
+  const position = cars.findIndex((car) => car.id === id);
+  cars.splice(position, 1);
+  printCars();
 }
 printCars();
